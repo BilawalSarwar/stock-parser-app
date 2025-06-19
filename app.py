@@ -7,10 +7,11 @@ import os
 
 def extract_value_line_table_fixed_with_skipped(pdf_path):
     doc = fitz.open(pdf_path)
+    total_pages = len(doc)  # Automatically detect total pages
     all_data = []
     skipped_rows = []
 
-    for page_number in range(start_page, end_page + 1):
+    for page_number in range(1, total_pages + 1):  # Loop through all pages
         page = doc[page_number - 1]
         blocks = page.get_text("blocks", flags=fitz.TEXT_PRESERVE_LIGATURES | fitz.TEXT_PRESERVE_WHITESPACE)
         blocks.sort(key=lambda b: (b[1], b[0]))
