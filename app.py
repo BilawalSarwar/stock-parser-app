@@ -5,7 +5,7 @@ import fitz  # PyMuPDF
 import re
 import os
 
-def extract_value_line_table_fixed_with_skipped(pdf_path, start_page=2, end_page=22):
+def extract_value_line_table_fixed_with_skipped(pdf_path):
     doc = fitz.open(pdf_path)
     all_data = []
     skipped_rows = []
