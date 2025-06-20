@@ -93,7 +93,7 @@ def extract_value_line_table_fixed_with_skipped(pdf_path):
     return df, skipped_df
 
 
-st.title("📄 Value Line PDF Table Parser")
+st.title("Stocks Parser")
 
 uploaded_file = st.file_uploader("Upload a Value Line PDF report", type="pdf")
 if uploaded_file:
